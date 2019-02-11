@@ -1,5 +1,6 @@
 ## Overview
-This app integrates Twilio text messaging services and Wordnik API to send you a text every morning with a new vocabulary "word of the day".
+This app integrates Twilio text messaging services and Quotes API to send you a text every morning with a new vocabulary "word of the day".
+Text the word "start" to (415) 200-2382 to begin receiving daily vocab words in sms messages. They come in at 10am EST, 7am PST each morning.
 
 ## Technologies Used
 1. Java
@@ -9,8 +10,8 @@ This app integrates Twilio text messaging services and Wordnik API to send you a
 ## How It Works
 
 ### Sending texts
-In Main.class there is a scheduled method to run at 11am each morning, which calls ChronJob.class. ChronJob's three methods are the core of the application.
-The first is the API call to Wordnik which is a simple HTTP request for data and returns a json object.
+In Main.class there is a scheduled method to run at 7am each morning, which calls ChronJob.class. ChronJob's three methods are the core of the application.
+The first is the API call which is a simple HTTP request for data and returns a json object.
 The second method parses the json data and extracts the word, definition and example sentence.
 The third method is what sends the text message.
 
