@@ -29,4 +29,5 @@ I instruct Twilio to send any POST requests (received text messages) to my ngrok
 
 (when Twilio receives a request and sends an HTTP request to my server, this is called a webhook)
 <img width="654" alt="screen shot 2019-02-07 at 6 16 08 pm" src="https://user-images.githubusercontent.com/34493689/52455893-29596280-2b07-11e9-87ee-43a6ceff3ca6.png">
-* image source: https://www.twilio.com/docs/sms/quickstart/java#receive-and-reply-to-inbound-sms-messages
+
+image source: https://www.twilio.com/docs/sms/quickstart/java#receive-and-reply-to-inbound-sms-messages
