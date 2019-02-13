@@ -6,10 +6,11 @@ Text the word "start" to (415) 200-2382 to begin receiving daily quotes in sms m
 I want this app to be used by many people and a hands-off, long-running project. The way it was originally set up with ngrok and a localhost server was not setting it up for that. I uploaded the code to Heroku so now that is my server sending daily texts. To see that it is up and running just go to https://quoteoftheday2.herokuapp.com/
 
 ## Technologies Used
-1. Java
-2. Twilio
-3. Ngrok
-4. Heroku
+1. Java 11
+2. Maven
+3. Twilio
+4. Ngrok
+5. Heroku
 
 ## How It Works
 
