@@ -3,7 +3,7 @@ This app integrates Twilio text messaging services and Quotes API to send you a 
 Text the word "start" to (415) 200-2382 to begin receiving daily quotes in sms messages. They come in at 10am EST, 7am PST each morning.
 
 ## Update
-I want this app to be used by many people and a hands-off, long-running project. The way it was originally set up with ngrok and a localhost server was not setting it up for that. I uploaded the code to Heroku so now that is my server sending daily texts. To see that it is up and running just go to https://quoteoftheday2.herokuapp.com/
+I want this app to be used by many people and a hands-off, long-running project. The way it was originally set up with ngrok and a localhost server was not setting it up for that. I turned it into a maven project and uploaded the code to Heroku so now that is my server sending daily texts. To see that it is up and running just go to https://quoteoftheday2.herokuapp.com/
 
 ## Technologies Used
 1. Java 11
