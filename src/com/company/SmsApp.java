@@ -11,8 +11,10 @@ public class SmsApp {
 
     public static void SmsAppMethod() {
 
+        port(5678);
+
         // line of code below is for if you turn this into a web app
-         get("/", (req, res) -> "Hello Web");
+         get("/", (req, res) -> "Quote of the day running!");
 
         /**
          * when the twilio phone number receives an incoming text from any number...

@@ -1,6 +1,8 @@
 package com.company;
 
-import java.util.Calendar;
+import java.time.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import static com.company.SmsApp.SmsAppMethod;
@@ -20,23 +22,46 @@ public class Main {
         SmsAppMethod();
 
         /**
-         * this class sets up a periodic task to be run at 11am local time each day
-         * for 7 days
+         * this class sets up a periodic task to be run at 7am local time each day
+         * for 365 days
          *
          * it runs class ChronJob(); which holds the main functionality of the app,
          * mainly the api request for the data, the parsing of the json object,
          * and the sending of the text to the users
          */
 
-        Calendar today = Calendar.getInstance();
-        today.set(Calendar.HOUR_OF_DAY, 7);
-        today.set(Calendar.MINUTE, 0);
-        today.set(Calendar.SECOND, 0);
+        // I want it to run only when it hits 7am not immediately
 
-        java.util.Timer timer = new java.util.Timer();
-        ChronJob mainFunctionality = new ChronJob();
-        timer.schedule(mainFunctionality, today.getTime(), TimeUnit.MILLISECONDS.convert(365, TimeUnit.DAYS));
+        LocalTime now = ZonedDateTime.now().toLocalTime();
+        LocalTime sevenAM = LocalTime.of(14, 0, 0);
 
+        LocalTime twentyFourHours = LocalTime.of(23, 59, 59, 99999);
+        LocalTime zeroHours = LocalTime.of(0, 0, 0);
+
+        System.out.println(now);
+        System.out.println(sevenAM);
+
+        // time until 7am today
+        Duration duration = Duration.between(now, sevenAM);
+        // time until the end of the day
+        Duration duration2 = Duration.between(now, twentyFourHours);
+        // time until 7am the following day
+        Duration duration3 = Duration.between(zeroHours, sevenAM);
+
+        long timeUntilSevenAM = duration.toMillis();
+
+        if (now.isBefore(sevenAM)) {
+            System.out.println("before 7am, will run today");
+        } else {
+            System.out.println("already past 7am, will run tomorrow");
+            timeUntilSevenAM = duration2.toMillis() + duration3.toMillis();
+        }
+
+        System.out.println(timeUntilSevenAM/1000/60);
+
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        ChronJob task = new ChronJob();
+        scheduler.scheduleAtFixedRate(task, timeUntilSevenAM, TimeUnit.DAYS.toMillis( 1 ), TimeUnit.MILLISECONDS);
     }
 
 }

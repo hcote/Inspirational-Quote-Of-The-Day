@@ -28,7 +28,6 @@ public class DataRequest {
                     .header("Content-Type", "application/json")
                     .build();
             HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
             return response.body().toString();
 
         } catch (Throwable e) {
@@ -58,6 +57,11 @@ public class DataRequest {
             JSONArray quotes = contents.getJSONArray("quotes");
             JSONObject quoteObj = quotes.getJSONObject(0);
             String quote = quoteObj.getString("quote");
+
+//            testing if author is null which will throw an error but can only run this when the API runs the author is null
+//            if (quoteObj.isNull("quote")) {
+//                System.out.println("hellooo");
+//            }
             String author = quoteObj.getString("author");
 
             System.out.println("quote: " + quote);
@@ -71,7 +75,7 @@ public class DataRequest {
             e.printStackTrace();
         }
 
-        return "Failed to attempt to parse json object";
+        return null;
     }
 
 }

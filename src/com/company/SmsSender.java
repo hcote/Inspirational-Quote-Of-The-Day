@@ -18,19 +18,20 @@ public class SmsSender {
      */
 
     static {
-//        phoneNumbers.add(momsNum);
-//        phoneNumbers.add(dadsNum);
-//        phoneNumbers.add(tylersNum);
-//        phoneNumbers.add(stephsNum);
-//        phoneNumbers.add(parkersNum);
-//        phoneNumbers.add(jsNum);
-//        phoneNumbers.add(hollynsNum);
-        phoneNumbers.add(myNum);
+//        phoneNumbers.add(m);
+//        phoneNumbers.add(d);
+//        phoneNumbers.add(t);
+//        phoneNumbers.add(s);
+//        phoneNumbers.add(p);
+//        phoneNumbers.add(j);
+//        phoneNumbers.add(h);
+        phoneNumbers.add(me);
 
-//        phoneNumbers.add(mrsverma);
-//        phoneNumbers.add(kyle);
-//        phoneNumbers.add(boylivo);
+//        phoneNumbers.add(mv);
+//        phoneNumbers.add(k);
+//        phoneNumbers.add(b);
 //        phoneNumbers.add(mk);
+//        phoneNumbers.add(mkm);
     }
 
 
